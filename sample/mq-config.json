@@ -1,0 +1,157 @@
+{
+  "rabbit_version": "3.11.10",
+  "rabbitmq_version": "3.11.10",
+  "product_name": "RabbitMQ",
+  "product_version": "3.11.10",
+  "users": [
+    {
+      "name": "admin",
+      "password_hash": "BLzW0EASGs4hWzUdBkVxu5X0K+24Ef/ro9UqSpHFwBl6SzmQA",
+      "hashing_algorithm": "rabbit_password_hashing_sha256",
+      "tags": [
+        "administrator"
+      ],
+      "limits": {}
+    },
+    {
+      "name": "user",
+      "password_hash": "qadi61ibCLcq169rbZjd8t01JUlWTFq0IIju7ybKd7N4xtmR",
+      "hashing_algorithm": "rabbit_password_hashing_sha256",
+      "tags": [
+        "administrator"
+      ],
+      "limits": {}
+    },
+    {
+      "name": "guest",
+      "password_hash": "FDnEIy9fQ/PLiTLarDw66yxAxa8E9UiVCAHgFRddZdR/z80S",
+      "hashing_algorithm": "rabbit_password_hashing_sha256",
+      "tags": [
+        "administrator"
+      ],
+      "limits": {}
+    }
+  ],
+  "vhosts": [
+    {
+      "name": "/"
+    }
+  ],
+  "permissions": [
+    {
+      "user": "admin",
+      "vhost": "/",
+      "configure": ".*",
+      "write": ".*",
+      "read": ".*"
+    },
+    {
+      "user": "guest",
+      "vhost": "/",
+      "configure": ".*",
+      "write": ".*",
+      "read": ".*"
+    },
+    {
+      "user": "user",
+      "vhost": "/",
+      "configure": ".*",
+      "write": ".*",
+      "read": ".*"
+    }
+  ],
+  "topic_permissions": [],
+  "parameters": [],
+  "global_parameters": [
+    {
+      "name": "internal_cluster_id",
+      "value": "rabbitmq-cluster-id-whJGT2qC0hzkoUyl2_5ZAA"
+    }
+  ],
+  "policies": [],
+  "queues": [
+    {
+      "name": "FILE_UPLOAD",
+      "vhost": "/",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {}
+    },
+    {
+      "name": "digital_id_notification_ttl_queue",
+      "vhost": "/",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {
+        "x-dead-letter-exchange": "digital_id_notification_dead_letter_exchange",
+        "x-dead-letter-routing-key": "digital_id_notification_dead_letter_routing_key"
+      }
+    },
+    {
+      "name": "INVOICE_SUBMIT",
+      "vhost": "/",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {}
+    },
+    {
+      "name": "POST_TOKEN",
+      "vhost": "/",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {}
+    },
+    {
+      "name": "transfer_payment_ttl_queue",
+      "vhost": "/",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {
+        "x-dead-letter-exchange": "transfer_dead_letter_exchage",
+        "x-dead-letter-routing-key": "transfer_dead_letter_routing_key"
+      }
+    },
+    {
+      "name": "httpsBearTokenAuth",
+      "vhost": "/",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {}
+    },
+    {
+      "name": "kenWi_json_request",
+      "vhost": "/",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {}
+    },
+    {
+      "name": "Crypto_POST",
+      "vhost": "/",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {}
+    },
+    {
+      "name": "OffQueue",
+      "vhost": "/",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {}
+    },
+    {
+      "name": "KKK_POST_URL_ENCODE_FORM",
+      "vhost": "/",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {}
+    },
+    {
+      "name": "AGG_POST",
+      "vhost": "/",
+      "durable": true,
+      "auto_delete": false,
+      "arguments": {}
+    }
+  ]
+}
